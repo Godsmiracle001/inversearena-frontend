@@ -124,7 +124,7 @@ fn basic_init_and_round_cycle() {
     let env = make_env();
     let client = create_client(&env);
     set_ledger(&env, 100);
-    client.init(&5);
+    client.init(&5u32);
     let r = client.start_round();
     assert_eq!(r.round_number, 1);
     assert!(r.active);
@@ -143,7 +143,7 @@ fn start_round_records_start_and_deadline_ledgers() {
 
     set_ledger_sequence(&env, 100);
 
-    client.init(&5);
+    client.init(&5u32);
     let round = client.start_round();
 
     assert_eq!(
@@ -169,7 +169,7 @@ fn submit_choice_allows_submission_on_deadline_ledger() {
     let player = Address::generate(&env);
 
     set_ledger_sequence(&env, 200);
-    client.init(&5);
+    client.init(&5u32);
     client.start_round();
 
     set_ledger_sequence(&env, 205);
@@ -188,7 +188,7 @@ fn submit_choice_rejects_late_submissions() {
     let player = Address::generate(&env);
 
     set_ledger_sequence(&env, 300);
-    client.init(&5);
+    client.init(&5u32);
     client.start_round();
 
     set_ledger_sequence(&env, 306);
@@ -813,7 +813,7 @@ fn timeout_round_succeeds_one_ledger_after_deadline() {
     let client = create_client(&env);
 
     set_ledger_sequence(&env, 1000);
-    client.init(&10);
+    client.init(&10u32);
     client.start_round();
 
     // deadline = 1010; advance one past it
@@ -832,7 +832,7 @@ fn timeout_round_succeeds_just_after_deadline() {
     let client = create_client(&env);
 
     set_ledger_sequence(&env, 500);
-    client.init(&5);
+    client.init(&5u32);
     client.start_round(); // deadline = 505
 
     set_ledger_sequence(&env, 506);
@@ -899,7 +899,7 @@ fn round_state_is_consistent_after_timeout() {
     let player = Address::generate(&env);
 
     set_ledger_sequence(&env, 300);
-    client.init(&5); // deadline = 305
+    client.init(&5u32); // deadline = 305
     client.start_round();
 
     // player submits within window
@@ -953,7 +953,7 @@ fn timeout_works_when_no_player_submitted() {
     let client = create_client(&env);
 
     set_ledger_sequence(&env, 600);
-    client.init(&5);
+    client.init(&5u32);
     let round = client.start_round(); // deadline = 605
     assert_eq!(round.total_submissions, 0);
 
@@ -1003,7 +1003,7 @@ fn submit_choice_rejected_after_deadline() {
     let player = Address::generate(&env);
 
     set_ledger_sequence(&env, 800);
-    client.init(&5); // deadline = 805
+    client.init(&5u32); // deadline = 805
     client.start_round();
 
     set_ledger_sequence(&env, 806);
@@ -1019,7 +1019,7 @@ fn new_round_starts_after_timeout_with_fresh_state() {
     let client = create_client(&env);
 
     set_ledger_sequence(&env, 900);
-    client.init(&5); // deadline = 905
+    client.init(&5u32); // deadline = 905
     client.start_round();
 
     set_ledger_sequence(&env, 906);
@@ -1043,7 +1043,7 @@ fn start_round_fails_when_active_round_exists() {
     let client = create_client(&env);
 
     set_ledger_sequence(&env, 1000);
-    client.init(&10);
+    client.init(&10u32);
     client.start_round();
 
     set_ledger_sequence(&env, 1005);
@@ -1103,7 +1103,7 @@ fn partial_submissions_preserved_after_timeout() {
     let player_c = Address::generate(&env);
 
     set_ledger_sequence(&env, 2000);
-    client.init(&10); // deadline = 2010
+    client.init(&10u32); // deadline = 2010
     client.start_round();
 
     // only player_a and player_b submit
@@ -1143,17 +1143,17 @@ fn claim_success_winner_receives_balance() {
 
     // Mint tokens to the arena contract
     let arena_addr = client.address.clone();
-    asset.mint(&arena_addr, &1000);
+    asset.mint(&arena_addr, &1000i128);
 
     client.set_token(&token_id);
 
     let player = Address::generate(&env);
-    client.init(&5);
+    client.init(&5u32);
     client.start_round();
 
     // Admin sets winner (stake=100, yield=25)
     env.mock_all_auths();
-    client.set_winner(&player, &100, &25);
+    client.set_winner(&player, &100i128, &25i128);
 
     // Player claims
     client.claim(&player);
@@ -1176,7 +1176,7 @@ fn claim_reverts_for_non_winner() {
     let asset = StellarAssetClient::new(&env, &token_id);
     asset.mint(&client.address, &1000);
     client.set_token(&token_id);
-    client.init(&5);
+    client.init(&5u32);
     client.start_round();
 
     let non_winner = Address::generate(&env);
@@ -1193,7 +1193,7 @@ fn double_claim_reverts() {
     let asset = StellarAssetClient::new(&env, &token_id);
     asset.mint(&client.address, &1000);
     client.set_token(&token_id);
-    client.init(&5);
+    client.init(&5u32);
     client.start_round();
 
     let player = Address::generate(&env);
@@ -1241,7 +1241,7 @@ fn test_functions_fail_when_paused() {
     let (env, _admin, client) = setup_with_admin();
     let player = Address::generate(&env);
     
-    client.init(&10);
+    client.init(&10u32);
     client.pause();
     assert!(client.is_paused());
 
@@ -1262,7 +1262,7 @@ fn test_functions_fail_when_paused() {
 fn test_unpause_restores_functionality() {
     let (env, _admin, client) = setup_with_admin();
 
-    client.init(&10);
+    client.init(&10u32);
     client.pause();
     client.unpause();
 
@@ -1340,7 +1340,7 @@ fn test_paused_blocks_game_functions_not_governance() {
     let player = Address::generate(&env);
     let hash = dummy_hash(&env);
 
-    client.init(&10);
+    client.init(&10u32);
     client.pause();
     assert!(client.is_paused());
 
@@ -1381,7 +1381,7 @@ fn test_all_functions_work_after_unpause() {
     let (env, _admin, client) = setup_with_admin();
     let hash = dummy_hash(&env);
 
-    client.init(&10);
+    client.init(&10u32);
     client.pause();
     client.unpause();
     assert!(!client.is_paused());
@@ -1466,7 +1466,7 @@ fn get_arena_state_reflects_round_number() {
     let client = create_client(&env);
 
     set_ledger_sequence(&env, 100);
-    client.init(&5);
+    client.init(&5u32);
     let round = client.start_round();
 
     let state = client.get_arena_state();
@@ -1484,13 +1484,25 @@ fn get_arena_state_reflects_survivor_count() {
     let player_a = Address::generate(&env);
     let player_b = Address::generate(&env);
 
+    // Set up Token
+    let admin = Address::generate(&env);
+    client.initialize(&admin);
+    client.init(&10u32); // Sets capacity and min stake requirements if any
+    let (token, token_id) = setup_token(&env, &admin);
+    let asset = StellarAssetClient::new(&env, &token_id);
+    client.set_token(&token_id);
+
+    // Mint tokens to players
+    asset.mint(&player_a, &20_000_000i128);
+    asset.mint(&player_b, &20_000_000i128);
+
     // Before any joins.
     assert_eq!(client.get_arena_state().survivors_count, 0);
 
-    client.join(&player_a, &100i128);
+    client.join(&player_a, &10_000_000i128);
     assert_eq!(client.get_arena_state().survivors_count, 1);
 
-    client.join(&player_b, &200i128);
+    client.join(&player_b, &10_000_000i128);
     assert_eq!(client.get_arena_state().survivors_count, 2);
 }
 
@@ -1513,7 +1525,7 @@ fn get_arena_state_is_pure_read() {
     let client = create_client(&env);
 
     set_ledger_sequence(&env, 50);
-    client.init(&10);
+    client.init(&10u32);
     client.start_round();
 
     let state_a = client.get_arena_state();

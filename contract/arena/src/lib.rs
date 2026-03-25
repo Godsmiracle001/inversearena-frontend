@@ -2,7 +2,7 @@
 
 use soroban_sdk::{
     Address, BytesN, Env, Symbol, contract, contracterror, contractimpl, contracttype,
-    symbol_short, token,
+    symbol_short, token::{self, Client as TokenClient},
 };
 
 // ── Storage keys ──────────────────────────────────────────────────────────────
@@ -217,6 +217,17 @@ impl ArenaContract {
         let winner_data: Option<(i128, i128)> = storage(&env).get(&DataKey::Winner(player.clone()));
         match winner_data {
             Some((stake, yield_comp)) => {
+                // Effects: Mark as claimed and remove winner record BEFORE interaction.
+                storage(&env).set(&DataKey::Claimed(player.clone()), &true);
+                bump(&env, &DataKey::Claimed(player.clone()));
+                storage(&env).remove(&DataKey::Winner(player.clone()));
+
+                let mut round = get_round(&env)?;
+                round.finished = true;
+                storage(&env).set(&DataKey::Round, &round);
+                bump(&env, &DataKey::Round);
+
+                // Interactions: Perform the transfer.
                 let token: Address = env
                     .storage()
                     .instance()
@@ -226,14 +237,6 @@ impl ArenaContract {
 
                 let total_payout = stake + yield_comp;
                 token_client.transfer(&env.current_contract_address(), &player, &total_payout);
-
-                storage(&env).set(&DataKey::Claimed(player.clone()), &true);
-                bump(&env, &DataKey::Claimed(player.clone()));
-
-                let mut round = get_round(&env)?;
-                round.finished = true;
-                storage(&env).set(&DataKey::Round, &round);
-                bump(&env, &DataKey::Round);
 
                 Ok(())
             }

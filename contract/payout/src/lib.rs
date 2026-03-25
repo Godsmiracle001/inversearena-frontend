@@ -5,7 +5,9 @@ use soroban_sdk::{
 };
 
 const ADMIN_KEY: Symbol = symbol_short!("ADMIN");
+const TREASURY_KEY: Symbol = symbol_short!("TREASURY");
 const TOPIC_PAYOUT_EXECUTED: Symbol = symbol_short!("PAYOUT");
+const TOPIC_DUST_COLLECTED: Symbol = symbol_short!("DUST");
 
 /// Event payload version. Include in every event data tuple so consumers
 /// can detect schema changes without re-deploying indexers.
@@ -30,6 +32,10 @@ pub enum PayoutError {
     InvalidAmount = 4,
     /// A payout for this `(idempotency_key, winner)` pair was already processed.
     AlreadyProcessed = 5,
+    /// No winners provided for prize distribution.
+    NoWinners = 6,
+    /// Treasury address not set.
+    TreasuryNotSet = 7,
 }
 
 /// Storage key for payout records.
@@ -56,7 +62,7 @@ pub enum Error {
 pub struct PayoutData {
     pub winner: Address,
     pub amount: i128,
-    pub currency: Symbol,
+    pub currency: Address,
     pub paid: bool,
 }
 
@@ -100,6 +106,22 @@ impl PayoutContract {
         require_admin(&env)
     }
 
+    /// Set the treasury address for collecting dust. Admin-only.
+    pub fn set_treasury(env: Env, treasury: Address) -> Result<(), PayoutError> {
+        let admin = require_admin(&env)?;
+        admin.require_auth();
+        env.storage().instance().set(&TREASURY_KEY, &treasury);
+        Ok(())
+    }
+
+    /// Return the current treasury address.
+    pub fn treasury(env: Env) -> Result<Address, PayoutError> {
+        env.storage()
+            .instance()
+            .get(&TREASURY_KEY)
+            .ok_or(PayoutError::TreasuryNotSet)
+    }
+
     /// Distribute winnings to a winner. Admin-only.
     ///
     /// Uses a `(context, idempotency_key, winner)` triple to prevent
@@ -130,7 +152,7 @@ impl PayoutContract {
         idempotency_key: u32,
         winner: Address,
         amount: i128,
-        currency: Symbol,
+        currency: Address,
     ) -> Result<(), PayoutError> {
         let admin = require_admin(&env)?;
 
@@ -152,6 +174,9 @@ impl PayoutContract {
             return Err(PayoutError::AlreadyProcessed);
         }
 
+        let token_client = soroban_sdk::token::Client::new(&env, &currency);
+        token_client.transfer(&env.current_contract_address(), &winner, &amount);
+
         let payout_data = PayoutData {
             winner: winner.clone(),
             amount,
@@ -162,6 +187,47 @@ impl PayoutContract {
 
         env.events()
             .publish((TOPIC_PAYOUT_EXECUTED,), (EVENT_VERSION, winner, amount, currency));
+
+        Ok(())
+    }
+
+    /// Distribute a prize pool among multiple winners with deterministic rounding.
+    /// Dust (remainder) is sent to the treasury.
+    pub fn distribute_prize(
+        env: Env,
+        total_prize: i128,
+        winners: soroban_sdk::Vec<Address>,
+        currency: Address,
+    ) -> Result<(), PayoutError> {
+        let admin = require_admin(&env)?;
+        admin.require_auth();
+
+        if winners.is_empty() {
+            return Err(PayoutError::NoWinners);
+        }
+
+        if total_prize <= 0 {
+            return Err(PayoutError::InvalidAmount);
+        }
+
+        let treasury = env.storage().instance().get(&TREASURY_KEY).ok_or(PayoutError::TreasuryNotSet)?;
+        let token_client = soroban_sdk::token::Client::new(&env, &currency);
+
+        let count = winners.len() as i128;
+        let share = total_prize / count;
+        let dust = total_prize % count;
+
+        // Transfer share to each winner.
+        for winner in winners.iter() {
+            token_client.transfer(&env.current_contract_address(), &winner, &share);
+            env.events().publish((TOPIC_PAYOUT_EXECUTED,), (winner, share, currency.clone()));
+        }
+
+        // Transfer dust to treasury.
+        if dust > 0 {
+            token_client.transfer(&env.current_contract_address(), &treasury, &dust);
+            env.events().publish((TOPIC_DUST_COLLECTED,), (treasury, dust, currency));
+        }
 
         Ok(())
     }
