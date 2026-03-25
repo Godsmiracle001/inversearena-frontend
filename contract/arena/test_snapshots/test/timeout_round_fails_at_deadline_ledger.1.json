@@ -108,6 +108,14 @@
                     },
                     {
                       "key": {
+                        "symbol": "finished"
+                      },
+                      "val": {
+                        "bool": false
+                      }
+                    },
+                    {
+                      "key": {
                         "symbol": "round_deadline_ledger"
                       },
                       "val": {

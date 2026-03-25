@@ -9,6 +9,7 @@ use proptest::prelude::*;
 use soroban_sdk::{
     Address, BytesN, Env,
     testutils::{Address as _, Ledger as _, LedgerInfo},
+    token::StellarAssetClient,
 };
 
 // ── helpers ───────────────────────────────────────────────────────────────────
@@ -118,6 +119,15 @@ fn dummy_hash(env: &Env) -> BytesN<32> {
     BytesN::from_array(env, &[1u8; 32])
 }
 
+/// Register a Stellar Asset Contract and return (StellarAssetClient, token Address).
+fn setup_token<'a>(env: &'a Env, admin: &Address) -> (StellarAssetClient<'a>, Address) {
+    let token_id = env
+        .register_stellar_asset_contract_v2(admin.clone())
+        .address();
+    let asset = StellarAssetClient::new(env, &token_id);
+    (asset, token_id)
+}
+
 // ── sanity: basic contract round cycle ───────────────────────────────────────
 
 #[test]
@@ -156,6 +166,7 @@ fn start_round_records_start_and_deadline_ledgers() {
             active: true,
             total_submissions: 0,
             timed_out: false,
+            finished: false,
         }
     );
 }
@@ -1703,13 +1714,13 @@ fn join_boundary_participants_n_minus_1_n_n_plus_1() {
     for _ in 0..(CAP - 1) {
         let p = Address::generate(&env);
         asset.mint(&p, &1000i128);
-        client.join(&p, &100i128).unwrap();
+        client.join(&p, &100i128);
     }
     assert_eq!(client.get_arena_state().survivors_count, CAP - 1);
 
     let last_ok = Address::generate(&env);
     asset.mint(&last_ok, &1000i128);
-    client.join(&last_ok, &100i128).unwrap();
+    client.join(&last_ok, &100i128);
     assert_eq!(client.get_arena_state().survivors_count, CAP);
 
     let too_many = Address::generate(&env);
