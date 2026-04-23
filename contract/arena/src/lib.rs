@@ -2,7 +2,7 @@
 
 use soroban_sdk::{
     contract, contracterror, contractimpl, contracttype, symbol_short, token, Address, Bytes,
-    BytesN, Env, String, Symbol, Vec, xdr::ToXdr,
+    BytesN, Env, IntoVal, String, Symbol, Vec, xdr::ToXdr,
 };
 
 mod bounds;
@@ -207,6 +207,8 @@ enum DataKey {
     ContractAdmin,
     UpgradeHash,
     UpgradeTimestamp,
+    FactoryAddress,
+    ArenaId,
 }
 
 // ── Contract ──────────────────────────────────────────────────────────────────
@@ -234,6 +236,16 @@ impl ArenaContract {
         let admin: Address = Self::admin(env.clone());
         admin.require_auth();
         env.storage().instance().set(&DataKey::ContractAdmin, &new_admin);
+    }
+
+    pub fn init_factory(env: Env, factory: Address, _creator: Address) {
+        let admin = Self::admin(env.clone());
+        admin.require_auth();
+
+        if env.storage().instance().has(&DataKey::FactoryAddress) {
+            panic!("already initialized");
+        }
+        env.storage().instance().set(&DataKey::FactoryAddress, &factory);
     }
 
     pub fn init(
@@ -809,6 +821,10 @@ impl ArenaContract {
 
         env.storage().persistent().set(&DataKey::Metadata(arena_id), &metadata);
         bump(&env, &DataKey::Metadata(arena_id));
+
+        // Store the single ArenaId to use for factory notifications
+        env.storage().instance().set(&DataKey::ArenaId, &arena_id);
+
         Ok(())
     }
 
@@ -1038,6 +1054,19 @@ fn set_state(env: &Env, new_state: ArenaState) {
     if old_state == new_state { return; }
     env.storage().instance().set(&DataKey::State, &new_state);
     env.events().publish((TOPIC_STATE_CHANGED,), ArenaStateChanged { old_state, new_state });
+
+    // Notify the factory if it is linked
+    if let (Some(factory), Some(arena_id)) = (
+        env.storage().instance().get::<_, Address>(&DataKey::FactoryAddress),
+        env.storage().instance().get::<_, u64>(&DataKey::ArenaId)
+    ) {
+        // The enum variants match 1:1 between ArenaState and Factory's ArenaStatus
+        env.invoke_contract::<()>(
+            &factory,
+            &soroban_sdk::Symbol::new(env, "update_arena_status"),
+            soroban_sdk::vec![env, arena_id.into_val(env), new_state.into_val(env)],
+        );
+    }
 }
 
 fn bump(env: &Env, key: &DataKey) {

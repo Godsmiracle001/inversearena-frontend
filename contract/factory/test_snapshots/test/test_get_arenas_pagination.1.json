@@ -92,50 +92,7 @@
               ]
             }
           },
-          "sub_invocations": [
-            {
-              "function": {
-                "contract_fn": {
-                  "contract_address": "CBWBGJIKFFZEX3K5GRMRMYM7BFZHT66QZAR37SF2SE6V6PQPTLKHARG5",
-                  "function_name": "set_token",
-                  "args": [
-                    {
-                      "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
-                    }
-                  ]
-                }
-              },
-              "sub_invocations": []
-            },
-            {
-              "function": {
-                "contract_fn": {
-                  "contract_address": "CBWBGJIKFFZEX3K5GRMRMYM7BFZHT66QZAR37SF2SE6V6PQPTLKHARG5",
-                  "function_name": "set_capacity",
-                  "args": [
-                    {
-                      "u32": 10
-                    }
-                  ]
-                }
-              },
-              "sub_invocations": []
-            },
-            {
-              "function": {
-                "contract_fn": {
-                  "contract_address": "CBWBGJIKFFZEX3K5GRMRMYM7BFZHT66QZAR37SF2SE6V6PQPTLKHARG5",
-                  "function_name": "set_admin",
-                  "args": [
-                    {
-                      "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
-                    }
-                  ]
-                }
-              },
-              "sub_invocations": []
-            }
-          ]
+          "sub_invocations": []
         }
       ]
     ],
@@ -169,50 +126,7 @@
               ]
             }
           },
-          "sub_invocations": [
-            {
-              "function": {
-                "contract_fn": {
-                  "contract_address": "CBBPKXGAEXK4FU3BQVLBNS3TV2UYLEZJUEQT4WPDGPHUFET7LKEXIFF2",
-                  "function_name": "set_token",
-                  "args": [
-                    {
-                      "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
-                    }
-                  ]
-                }
-              },
-              "sub_invocations": []
-            },
-            {
-              "function": {
-                "contract_fn": {
-                  "contract_address": "CBBPKXGAEXK4FU3BQVLBNS3TV2UYLEZJUEQT4WPDGPHUFET7LKEXIFF2",
-                  "function_name": "set_capacity",
-                  "args": [
-                    {
-                      "u32": 10
-                    }
-                  ]
-                }
-              },
-              "sub_invocations": []
-            },
-            {
-              "function": {
-                "contract_fn": {
-                  "contract_address": "CBBPKXGAEXK4FU3BQVLBNS3TV2UYLEZJUEQT4WPDGPHUFET7LKEXIFF2",
-                  "function_name": "set_admin",
-                  "args": [
-                    {
-                      "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
-                    }
-                  ]
-                }
-              },
-              "sub_invocations": []
-            }
-          ]
+          "sub_invocations": []
         }
       ]
     ],
@@ -246,50 +160,7 @@
               ]
             }
           },
-          "sub_invocations": [
-            {
-              "function": {
-                "contract_fn": {
-                  "contract_address": "CDTGMSXLPVPOZUWY4W73JFCKSAKESWZSSXQBJ3SWQWDJAU7IRFDK7T6B",
-                  "function_name": "set_token",
-                  "args": [
-                    {
-                      "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
-                    }
-                  ]
-                }
-              },
-              "sub_invocations": []
-            },
-            {
-              "function": {
-                "contract_fn": {
-                  "contract_address": "CDTGMSXLPVPOZUWY4W73JFCKSAKESWZSSXQBJ3SWQWDJAU7IRFDK7T6B",
-                  "function_name": "set_capacity",
-                  "args": [
-                    {
-                      "u32": 10
-                    }
-                  ]
-                }
-              },
-              "sub_invocations": []
-            },
-            {
-              "function": {
-                "contract_fn": {
-                  "contract_address": "CDTGMSXLPVPOZUWY4W73JFCKSAKESWZSSXQBJ3SWQWDJAU7IRFDK7T6B",
-                  "function_name": "set_admin",
-                  "args": [
-                    {
-                      "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
-                    }
-                  ]
-                }
-              },
-              "sub_invocations": []
-            }
-          ]
+          "sub_invocations": []
         }
       ]
     ],
@@ -323,50 +194,7 @@
               ]
             }
           },
-          "sub_invocations": [
-            {
-              "function": {
-                "contract_fn": {
-                  "contract_address": "CDRS74TAHZSJNMABUU4H3KI5XFH27KY7O7W6GGWPILTOUYMB7A4JDGO4",
-                  "function_name": "set_token",
-                  "args": [
-                    {
-                      "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
-                    }
-                  ]
-                }
-              },
-              "sub_invocations": []
-            },
-            {
-              "function": {
-                "contract_fn": {
-                  "contract_address": "CDRS74TAHZSJNMABUU4H3KI5XFH27KY7O7W6GGWPILTOUYMB7A4JDGO4",
-                  "function_name": "set_capacity",
-                  "args": [
-                    {
-                      "u32": 10
-                    }
-                  ]
-                }
-              },
-              "sub_invocations": []
-            },
-            {
-              "function": {
-                "contract_fn": {
-                  "contract_address": "CDRS74TAHZSJNMABUU4H3KI5XFH27KY7O7W6GGWPILTOUYMB7A4JDGO4",
-                  "function_name": "set_admin",
-                  "args": [
-                    {
-                      "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
-                    }
-                  ]
-                }
-              },
-              "sub_invocations": []
-            }
-          ]
+          "sub_invocations": []
         }
       ]
     ],
@@ -400,50 +228,7 @@
               ]
             }
           },
-          "sub_invocations": [
-            {
-              "function": {
-                "contract_fn": {
-                  "contract_address": "CCLYKFC5EX4TUBSS56XDVPFJFMO33W7WP7MTMK25EJVV7JKPCJJSXTBI",
-                  "function_name": "set_token",
-                  "args": [
-                    {
-                      "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
-                    }
-                  ]
-                }
-              },
-              "sub_invocations": []
-            },
-            {
-              "function": {
-                "contract_fn": {
-                  "contract_address": "CCLYKFC5EX4TUBSS56XDVPFJFMO33W7WP7MTMK25EJVV7JKPCJJSXTBI",
-                  "function_name": "set_capacity",
-                  "args": [
-                    {
-                      "u32": 10
-                    }
-                  ]
-                }
-              },
-              "sub_invocations": []
-            },
-            {
-              "function": {
-                "contract_fn": {
-                  "contract_address": "CCLYKFC5EX4TUBSS56XDVPFJFMO33W7WP7MTMK25EJVV7JKPCJJSXTBI",
-                  "function_name": "set_admin",
-                  "args": [
-                    {
-                      "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
-                    }
-                  ]
-                }
-              },
-              "sub_invocations": []
-            }
-          ]
+          "sub_invocations": []
         }
       ]
     ],
@@ -1226,169 +1011,6 @@
         {
           "contract_data": {
             "contract": "CBBPKXGAEXK4FU3BQVLBNS3TV2UYLEZJUEQT4WPDGPHUFET7LKEXIFF2",
-            "key": {
-              "vec": [
-                {
-                  "symbol": "Config"
-                }
-              ]
-            },
-            "durability": "persistent"
-          }
-        },
-        [
-          {
-            "last_modified_ledger_seq": 0,
-            "data": {
-              "contract_data": {
-                "ext": "v0",
-                "contract": "CBBPKXGAEXK4FU3BQVLBNS3TV2UYLEZJUEQT4WPDGPHUFET7LKEXIFF2",
-                "key": {
-                  "vec": [
-                    {
-                      "symbol": "Config"
-                    }
-                  ]
-                },
-                "durability": "persistent",
-                "val": {
-                  "map": [
-                    {
-                      "key": {
-                        "symbol": "max_rounds"
-                      },
-                      "val": {
-                        "u32": 20
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "required_stake_amount"
-                      },
-                      "val": {
-                        "i128": {
-                          "hi": 0,
-                          "lo": 10000000
-                        }
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_speed_in_ledgers"
-                      },
-                      "val": {
-                        "u32": 10
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            "ext": "v0"
-          },
-          535680
-        ]
-      ],
-      [
-        {
-          "contract_data": {
-            "contract": "CBBPKXGAEXK4FU3BQVLBNS3TV2UYLEZJUEQT4WPDGPHUFET7LKEXIFF2",
-            "key": {
-              "vec": [
-                {
-                  "symbol": "Round"
-                }
-              ]
-            },
-            "durability": "persistent"
-          }
-        },
-        [
-          {
-            "last_modified_ledger_seq": 0,
-            "data": {
-              "contract_data": {
-                "ext": "v0",
-                "contract": "CBBPKXGAEXK4FU3BQVLBNS3TV2UYLEZJUEQT4WPDGPHUFET7LKEXIFF2",
-                "key": {
-                  "vec": [
-                    {
-                      "symbol": "Round"
-                    }
-                  ]
-                },
-                "durability": "persistent",
-                "val": {
-                  "map": [
-                    {
-                      "key": {
-                        "symbol": "active"
-                      },
-                      "val": {
-                        "bool": false
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "finished"
-                      },
-                      "val": {
-                        "bool": false
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_deadline_ledger"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_number"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_start_ledger"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "timed_out"
-                      },
-                      "val": {
-                        "bool": false
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "total_submissions"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            "ext": "v0"
-          },
-          535680
-        ]
-      ],
-      [
-        {
-          "contract_data": {
-            "contract": "CBBPKXGAEXK4FU3BQVLBNS3TV2UYLEZJUEQT4WPDGPHUFET7LKEXIFF2",
             "key": "ledger_key_contract_instance",
             "durability": "persistent"
           }
@@ -1410,14 +1032,6 @@
                     "storage": [
                       {
                         "key": {
-                          "symbol": "ADMIN"
-                        },
-                        "val": {
-                          "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
-                        }
-                      },
-                      {
-                        "key": {
                           "symbol": "CAPACITY"
                         },
                         "val": {
@@ -1431,6 +1045,147 @@
                         "val": {
                           "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
                         }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Config"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "max_rounds"
+                              },
+                              "val": {
+                                "u32": 20
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "required_stake_amount"
+                              },
+                              "val": {
+                                "i128": {
+                                  "hi": 0,
+                                  "lo": 10000000
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_speed_in_ledgers"
+                              },
+                              "val": {
+                                "u32": 10
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "ContractAdmin"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "FactoryAddress"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM"
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Round"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "active"
+                              },
+                              "val": {
+                                "bool": false
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "finished"
+                              },
+                              "val": {
+                                "bool": false
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "reveal_deadline_ledger"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_deadline_ledger"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_number"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_start_ledger"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "timed_out"
+                              },
+                              "val": {
+                                "bool": false
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "total_submissions"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            }
+                          ]
+                        }
                       }
                     ]
                   }
@@ -1439,170 +1194,7 @@
             },
             "ext": "v0"
           },
-          535680
-        ]
-      ],
-      [
-        {
-          "contract_data": {
-            "contract": "CBWBGJIKFFZEX3K5GRMRMYM7BFZHT66QZAR37SF2SE6V6PQPTLKHARG5",
-            "key": {
-              "vec": [
-                {
-                  "symbol": "Config"
-                }
-              ]
-            },
-            "durability": "persistent"
-          }
-        },
-        [
-          {
-            "last_modified_ledger_seq": 0,
-            "data": {
-              "contract_data": {
-                "ext": "v0",
-                "contract": "CBWBGJIKFFZEX3K5GRMRMYM7BFZHT66QZAR37SF2SE6V6PQPTLKHARG5",
-                "key": {
-                  "vec": [
-                    {
-                      "symbol": "Config"
-                    }
-                  ]
-                },
-                "durability": "persistent",
-                "val": {
-                  "map": [
-                    {
-                      "key": {
-                        "symbol": "max_rounds"
-                      },
-                      "val": {
-                        "u32": 20
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "required_stake_amount"
-                      },
-                      "val": {
-                        "i128": {
-                          "hi": 0,
-                          "lo": 10000000
-                        }
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_speed_in_ledgers"
-                      },
-                      "val": {
-                        "u32": 10
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            "ext": "v0"
-          },
-          535680
-        ]
-      ],
-      [
-        {
-          "contract_data": {
-            "contract": "CBWBGJIKFFZEX3K5GRMRMYM7BFZHT66QZAR37SF2SE6V6PQPTLKHARG5",
-            "key": {
-              "vec": [
-                {
-                  "symbol": "Round"
-                }
-              ]
-            },
-            "durability": "persistent"
-          }
-        },
-        [
-          {
-            "last_modified_ledger_seq": 0,
-            "data": {
-              "contract_data": {
-                "ext": "v0",
-                "contract": "CBWBGJIKFFZEX3K5GRMRMYM7BFZHT66QZAR37SF2SE6V6PQPTLKHARG5",
-                "key": {
-                  "vec": [
-                    {
-                      "symbol": "Round"
-                    }
-                  ]
-                },
-                "durability": "persistent",
-                "val": {
-                  "map": [
-                    {
-                      "key": {
-                        "symbol": "active"
-                      },
-                      "val": {
-                        "bool": false
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "finished"
-                      },
-                      "val": {
-                        "bool": false
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_deadline_ledger"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_number"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_start_ledger"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "timed_out"
-                      },
-                      "val": {
-                        "bool": false
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "total_submissions"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            "ext": "v0"
-          },
-          535680
+          518400
         ]
       ],
       [
@@ -1630,14 +1222,6 @@
                     "storage": [
                       {
                         "key": {
-                          "symbol": "ADMIN"
-                        },
-                        "val": {
-                          "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
-                        }
-                      },
-                      {
-                        "key": {
                           "symbol": "CAPACITY"
                         },
                         "val": {
@@ -1651,6 +1235,147 @@
                         "val": {
                           "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
                         }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Config"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "max_rounds"
+                              },
+                              "val": {
+                                "u32": 20
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "required_stake_amount"
+                              },
+                              "val": {
+                                "i128": {
+                                  "hi": 0,
+                                  "lo": 10000000
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_speed_in_ledgers"
+                              },
+                              "val": {
+                                "u32": 10
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "ContractAdmin"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "FactoryAddress"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM"
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Round"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "active"
+                              },
+                              "val": {
+                                "bool": false
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "finished"
+                              },
+                              "val": {
+                                "bool": false
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "reveal_deadline_ledger"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_deadline_ledger"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_number"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_start_ledger"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "timed_out"
+                              },
+                              "val": {
+                                "bool": false
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "total_submissions"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            }
+                          ]
+                        }
                       }
                     ]
                   }
@@ -1659,170 +1384,7 @@
             },
             "ext": "v0"
           },
-          535680
-        ]
-      ],
-      [
-        {
-          "contract_data": {
-            "contract": "CCLYKFC5EX4TUBSS56XDVPFJFMO33W7WP7MTMK25EJVV7JKPCJJSXTBI",
-            "key": {
-              "vec": [
-                {
-                  "symbol": "Config"
-                }
-              ]
-            },
-            "durability": "persistent"
-          }
-        },
-        [
-          {
-            "last_modified_ledger_seq": 0,
-            "data": {
-              "contract_data": {
-                "ext": "v0",
-                "contract": "CCLYKFC5EX4TUBSS56XDVPFJFMO33W7WP7MTMK25EJVV7JKPCJJSXTBI",
-                "key": {
-                  "vec": [
-                    {
-                      "symbol": "Config"
-                    }
-                  ]
-                },
-                "durability": "persistent",
-                "val": {
-                  "map": [
-                    {
-                      "key": {
-                        "symbol": "max_rounds"
-                      },
-                      "val": {
-                        "u32": 20
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "required_stake_amount"
-                      },
-                      "val": {
-                        "i128": {
-                          "hi": 0,
-                          "lo": 10000000
-                        }
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_speed_in_ledgers"
-                      },
-                      "val": {
-                        "u32": 10
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            "ext": "v0"
-          },
-          535680
-        ]
-      ],
-      [
-        {
-          "contract_data": {
-            "contract": "CCLYKFC5EX4TUBSS56XDVPFJFMO33W7WP7MTMK25EJVV7JKPCJJSXTBI",
-            "key": {
-              "vec": [
-                {
-                  "symbol": "Round"
-                }
-              ]
-            },
-            "durability": "persistent"
-          }
-        },
-        [
-          {
-            "last_modified_ledger_seq": 0,
-            "data": {
-              "contract_data": {
-                "ext": "v0",
-                "contract": "CCLYKFC5EX4TUBSS56XDVPFJFMO33W7WP7MTMK25EJVV7JKPCJJSXTBI",
-                "key": {
-                  "vec": [
-                    {
-                      "symbol": "Round"
-                    }
-                  ]
-                },
-                "durability": "persistent",
-                "val": {
-                  "map": [
-                    {
-                      "key": {
-                        "symbol": "active"
-                      },
-                      "val": {
-                        "bool": false
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "finished"
-                      },
-                      "val": {
-                        "bool": false
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_deadline_ledger"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_number"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_start_ledger"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "timed_out"
-                      },
-                      "val": {
-                        "bool": false
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "total_submissions"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            "ext": "v0"
-          },
-          535680
+          518400
         ]
       ],
       [
@@ -1850,14 +1412,6 @@
                     "storage": [
                       {
                         "key": {
-                          "symbol": "ADMIN"
-                        },
-                        "val": {
-                          "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
-                        }
-                      },
-                      {
-                        "key": {
                           "symbol": "CAPACITY"
                         },
                         "val": {
@@ -1871,6 +1425,147 @@
                         "val": {
                           "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
                         }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Config"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "max_rounds"
+                              },
+                              "val": {
+                                "u32": 20
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "required_stake_amount"
+                              },
+                              "val": {
+                                "i128": {
+                                  "hi": 0,
+                                  "lo": 10000000
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_speed_in_ledgers"
+                              },
+                              "val": {
+                                "u32": 10
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "ContractAdmin"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "FactoryAddress"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM"
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Round"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "active"
+                              },
+                              "val": {
+                                "bool": false
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "finished"
+                              },
+                              "val": {
+                                "bool": false
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "reveal_deadline_ledger"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_deadline_ledger"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_number"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_start_ledger"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "timed_out"
+                              },
+                              "val": {
+                                "bool": false
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "total_submissions"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            }
+                          ]
+                        }
                       }
                     ]
                   }
@@ -1879,170 +1574,7 @@
             },
             "ext": "v0"
           },
-          535680
-        ]
-      ],
-      [
-        {
-          "contract_data": {
-            "contract": "CDRS74TAHZSJNMABUU4H3KI5XFH27KY7O7W6GGWPILTOUYMB7A4JDGO4",
-            "key": {
-              "vec": [
-                {
-                  "symbol": "Config"
-                }
-              ]
-            },
-            "durability": "persistent"
-          }
-        },
-        [
-          {
-            "last_modified_ledger_seq": 0,
-            "data": {
-              "contract_data": {
-                "ext": "v0",
-                "contract": "CDRS74TAHZSJNMABUU4H3KI5XFH27KY7O7W6GGWPILTOUYMB7A4JDGO4",
-                "key": {
-                  "vec": [
-                    {
-                      "symbol": "Config"
-                    }
-                  ]
-                },
-                "durability": "persistent",
-                "val": {
-                  "map": [
-                    {
-                      "key": {
-                        "symbol": "max_rounds"
-                      },
-                      "val": {
-                        "u32": 20
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "required_stake_amount"
-                      },
-                      "val": {
-                        "i128": {
-                          "hi": 0,
-                          "lo": 10000000
-                        }
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_speed_in_ledgers"
-                      },
-                      "val": {
-                        "u32": 10
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            "ext": "v0"
-          },
-          535680
-        ]
-      ],
-      [
-        {
-          "contract_data": {
-            "contract": "CDRS74TAHZSJNMABUU4H3KI5XFH27KY7O7W6GGWPILTOUYMB7A4JDGO4",
-            "key": {
-              "vec": [
-                {
-                  "symbol": "Round"
-                }
-              ]
-            },
-            "durability": "persistent"
-          }
-        },
-        [
-          {
-            "last_modified_ledger_seq": 0,
-            "data": {
-              "contract_data": {
-                "ext": "v0",
-                "contract": "CDRS74TAHZSJNMABUU4H3KI5XFH27KY7O7W6GGWPILTOUYMB7A4JDGO4",
-                "key": {
-                  "vec": [
-                    {
-                      "symbol": "Round"
-                    }
-                  ]
-                },
-                "durability": "persistent",
-                "val": {
-                  "map": [
-                    {
-                      "key": {
-                        "symbol": "active"
-                      },
-                      "val": {
-                        "bool": false
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "finished"
-                      },
-                      "val": {
-                        "bool": false
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_deadline_ledger"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_number"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_start_ledger"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "timed_out"
-                      },
-                      "val": {
-                        "bool": false
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "total_submissions"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            "ext": "v0"
-          },
-          535680
+          518400
         ]
       ],
       [
@@ -2070,14 +1602,6 @@
                     "storage": [
                       {
                         "key": {
-                          "symbol": "ADMIN"
-                        },
-                        "val": {
-                          "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
-                        }
-                      },
-                      {
-                        "key": {
                           "symbol": "CAPACITY"
                         },
                         "val": {
@@ -2091,6 +1615,147 @@
                         "val": {
                           "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
                         }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Config"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "max_rounds"
+                              },
+                              "val": {
+                                "u32": 20
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "required_stake_amount"
+                              },
+                              "val": {
+                                "i128": {
+                                  "hi": 0,
+                                  "lo": 10000000
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_speed_in_ledgers"
+                              },
+                              "val": {
+                                "u32": 10
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "ContractAdmin"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "FactoryAddress"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM"
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Round"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "active"
+                              },
+                              "val": {
+                                "bool": false
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "finished"
+                              },
+                              "val": {
+                                "bool": false
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "reveal_deadline_ledger"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_deadline_ledger"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_number"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_start_ledger"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "timed_out"
+                              },
+                              "val": {
+                                "bool": false
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "total_submissions"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            }
+                          ]
+                        }
                       }
                     ]
                   }
@@ -2099,170 +1764,7 @@
             },
             "ext": "v0"
           },
-          535680
-        ]
-      ],
-      [
-        {
-          "contract_data": {
-            "contract": "CDTGMSXLPVPOZUWY4W73JFCKSAKESWZSSXQBJ3SWQWDJAU7IRFDK7T6B",
-            "key": {
-              "vec": [
-                {
-                  "symbol": "Config"
-                }
-              ]
-            },
-            "durability": "persistent"
-          }
-        },
-        [
-          {
-            "last_modified_ledger_seq": 0,
-            "data": {
-              "contract_data": {
-                "ext": "v0",
-                "contract": "CDTGMSXLPVPOZUWY4W73JFCKSAKESWZSSXQBJ3SWQWDJAU7IRFDK7T6B",
-                "key": {
-                  "vec": [
-                    {
-                      "symbol": "Config"
-                    }
-                  ]
-                },
-                "durability": "persistent",
-                "val": {
-                  "map": [
-                    {
-                      "key": {
-                        "symbol": "max_rounds"
-                      },
-                      "val": {
-                        "u32": 20
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "required_stake_amount"
-                      },
-                      "val": {
-                        "i128": {
-                          "hi": 0,
-                          "lo": 10000000
-                        }
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_speed_in_ledgers"
-                      },
-                      "val": {
-                        "u32": 10
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            "ext": "v0"
-          },
-          535680
-        ]
-      ],
-      [
-        {
-          "contract_data": {
-            "contract": "CDTGMSXLPVPOZUWY4W73JFCKSAKESWZSSXQBJ3SWQWDJAU7IRFDK7T6B",
-            "key": {
-              "vec": [
-                {
-                  "symbol": "Round"
-                }
-              ]
-            },
-            "durability": "persistent"
-          }
-        },
-        [
-          {
-            "last_modified_ledger_seq": 0,
-            "data": {
-              "contract_data": {
-                "ext": "v0",
-                "contract": "CDTGMSXLPVPOZUWY4W73JFCKSAKESWZSSXQBJ3SWQWDJAU7IRFDK7T6B",
-                "key": {
-                  "vec": [
-                    {
-                      "symbol": "Round"
-                    }
-                  ]
-                },
-                "durability": "persistent",
-                "val": {
-                  "map": [
-                    {
-                      "key": {
-                        "symbol": "active"
-                      },
-                      "val": {
-                        "bool": false
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "finished"
-                      },
-                      "val": {
-                        "bool": false
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_deadline_ledger"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_number"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "round_start_ledger"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "timed_out"
-                      },
-                      "val": {
-                        "bool": false
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "total_submissions"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            "ext": "v0"
-          },
-          535680
+          518400
         ]
       ],
       [
@@ -2290,14 +1792,6 @@
                     "storage": [
                       {
                         "key": {
-                          "symbol": "ADMIN"
-                        },
-                        "val": {
-                          "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
-                        }
-                      },
-                      {
-                        "key": {
                           "symbol": "CAPACITY"
                         },
                         "val": {
@@ -2311,6 +1805,147 @@
                         "val": {
                           "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
                         }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Config"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "max_rounds"
+                              },
+                              "val": {
+                                "u32": 20
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "required_stake_amount"
+                              },
+                              "val": {
+                                "i128": {
+                                  "hi": 0,
+                                  "lo": 10000000
+                                }
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_speed_in_ledgers"
+                              },
+                              "val": {
+                                "u32": 10
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "ContractAdmin"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4"
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "FactoryAddress"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM"
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "Round"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "map": [
+                            {
+                              "key": {
+                                "symbol": "active"
+                              },
+                              "val": {
+                                "bool": false
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "finished"
+                              },
+                              "val": {
+                                "bool": false
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "reveal_deadline_ledger"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_deadline_ledger"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_number"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "round_start_ledger"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "timed_out"
+                              },
+                              "val": {
+                                "bool": false
+                              }
+                            },
+                            {
+                              "key": {
+                                "symbol": "total_submissions"
+                              },
+                              "val": {
+                                "u32": 0
+                              }
+                            }
+                          ]
+                        }
                       }
                     ]
                   }
@@ -2319,7 +1954,7 @@
             },
             "ext": "v0"
           },
-          535680
+          518400
         ]
       ],
       [
@@ -2340,7 +1975,7 @@
             },
             "ext": "v0"
           },
-          535680
+          518400
         ]
       ]
     ]

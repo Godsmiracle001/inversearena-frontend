@@ -899,10 +899,10 @@ fn test_remove_supported_token_emits_event() {
     let token = Address::generate(&env);
     client.add_supported_token(&token);
 
-    let before = env.events().all().len();
+    env.events().all(); // Clear any previous events
     client.remove_supported_token(&token);
     let events = env.events().all();
-    assert_eq!(events.len(), before + 1);
+    assert_eq!(events.len(), 1);
 
     let last = events.last().expect("event must exist");
     let (_contract, topics, data) = last;
@@ -1031,4 +1031,90 @@ fn read_functions_unaffected_by_factory_pause() {
     assert!(!client.is_whitelisted(&Address::generate(&env)));
     assert_eq!(client.get_min_stake(), MIN_STAKE);
     assert!(client.is_paused());
+}
+
+// ── Arena Status Tracking ─────────────────────────────────────────────────────
+
+#[test]
+fn test_get_arena_ref_not_found() {
+    let (_env, _admin, client) = setup();
+    let result = client.try_get_arena_ref(&999u64);
+    assert_eq!(result, Err(Ok(Error::ArenaNotFound)));
+}
+
+#[test]
+fn test_update_arena_status_not_found() {
+    let (_env, _admin, client) = setup();
+    let result = client.try_update_arena_status(&999u64, &crate::ArenaStatus::Active);
+    assert_eq!(result, Err(Ok(Error::ArenaNotFound)));
+}
+
+#[test]
+fn test_update_arena_status_success_and_auth() {
+    let (env, admin, client) = setup();
+    client.set_arena_wasm_hash(&dummy_hash(&env));
+    let currency = supported_currency(&env, &client);
+    
+    // Create pool will internally call set_arena_metadata, setting status to Pending
+    let arena_addr = client.create_pool(&admin, &MIN_STAKE, &currency, &10u32, &10u32);
+    
+    // We must call set_arena_metadata to initialize the ArenaRef mapping
+    env.mock_all_auths_allowing_non_root_auth();
+    client.set_arena_metadata(
+        &arena_addr,
+        &0u64,
+        &String::from_str(&env, "Test Arena"),
+        &None,
+        &admin,
+    );
+    
+    // Check initial status
+    let arena_ref = client.get_arena_ref(&0u64);
+    assert_eq!(arena_ref.contract, arena_addr);
+    assert_eq!(arena_ref.status, crate::ArenaStatus::Pending);
+
+    // Only the arena_addr can successfully call update_arena_status.
+    // We'll mock the auth of the arena_addr to simulate the arena contract calling it.
+    let contract_id = client.address.clone();
+    env.mock_auths(&[soroban_sdk::testutils::MockAuth {
+        address: &arena_addr,
+        invoke: &soroban_sdk::testutils::MockAuthInvoke {
+            contract: &contract_id,
+            fn_name: "update_arena_status",
+            args: soroban_sdk::vec![&env, 0u64.into_val(&env), crate::ArenaStatus::Active.into_val(&env)].into(),
+            sub_invokes: &[],
+        },
+    }]);
+
+    client.update_arena_status(&0u64, &crate::ArenaStatus::Active);
+
+    // Verify it updated
+    let arena_ref_updated = client.get_arena_ref(&0u64);
+    assert_eq!(arena_ref_updated.status, crate::ArenaStatus::Active);
+}
+
+#[test]
+fn test_update_arena_status_unauthorized() {
+    let env = Env::default();
+    let contract_id = env.register(FactoryContract, ());
+    let client = FactoryContractClient::new(&env, &contract_id);
+    
+    // Generate a dummy arena address
+    let arena_addr = Address::generate(&env);
+    
+    // Inject ArenaRef directly to avoid needing to mock complex auth trees
+    env.as_contract(&contract_id, || {
+        env.storage().persistent().set(
+            &crate::DataKey::ArenaRef(0u64),
+            &crate::ArenaRef {
+                contract: arena_addr.clone(),
+                status: crate::ArenaStatus::Pending,
+            },
+        );
+    });
+
+    // Now try to update_arena_status without mocking auth from arena_addr.
+    // This should fail because update_arena_status requires arena_addr.require_auth().
+    let result = client.try_update_arena_status(&0u64, &crate::ArenaStatus::Active);
+    assert_auth_err(result);
 }

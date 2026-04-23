@@ -32,6 +32,22 @@ pub struct ArenaMetadata {
     pub stake_amount: i128,
 }
 
+#[contracttype]
+#[derive(Clone, Copy, Debug, Eq, PartialEq)]
+pub enum ArenaStatus {
+    Pending,
+    Active,
+    Completed,
+    Cancelled,
+}
+
+#[contracttype]
+#[derive(Clone, Debug, PartialEq)]
+pub struct ArenaRef {
+    pub contract: Address,
+    pub status: ArenaStatus,
+}
+
 // ── Capacity limits ───────────────────────────────────────────────────────────
 
 const MAX_POOL_CAPACITY: u32 = 256;
@@ -42,6 +58,7 @@ const MAX_PAGE_SIZE: u32 = 50;
 pub enum DataKey {
     SupportedToken(Address),
     Pool(u32),
+    ArenaRef(u64),
 }
 
 // ── Timelock constant: 48 hours in seconds ────────────────────────────────────
@@ -112,6 +129,8 @@ pub enum Error {
     UpgradeAlreadyPending = 14,
     /// Contract is paused; write operations are disabled.
     Paused = 15,
+    /// The requested arena was not found.
+    ArenaNotFound = 16,
 }
 
 // ── Contract ──────────────────────────────────────────────────────────────────
@@ -408,6 +427,13 @@ impl FactoryContract {
 
         // ── Initialisation ──────────────────────────────────────────────────────
 
+        // 1. Call initialize so that the factory becomes the admin.
+        env.invoke_contract::<()>(
+            &arena_address,
+            &soroban_sdk::Symbol::new(&env, "initialize"),
+            soroban_sdk::vec![&env, env.current_contract_address().into_val(&env)],
+        );
+
         // Use a generic client to call init and initialize.
         // Note: In a real implementation, you'd use the generated client from the arena contract.
         // For simplicity here, we use invoke_contract if we don't have the client imported.
@@ -504,6 +530,40 @@ impl FactoryContract {
                 host.into_val(&env),
             ],
         );
+
+        // Store the ArenaRef tracking structure initialized to Pending status.
+        let arena_ref = ArenaRef {
+            contract: arena_address,
+            status: ArenaStatus::Pending,
+        };
+        env.storage().persistent().set(&DataKey::ArenaRef(arena_id), &arena_ref);
+    }
+
+    /// Retrieve the ArenaRef for a given arena_id.
+    pub fn get_arena_ref(env: Env, arena_id: u64) -> Result<ArenaRef, Error> {
+        env.storage()
+            .persistent()
+            .get(&DataKey::ArenaRef(arena_id))
+            .ok_or(Error::ArenaNotFound)
+    }
+
+    /// Update the status of an arena. Callable only by the Arena contract itself.
+    pub fn update_arena_status(env: Env, arena_id: u64, status: ArenaStatus) -> Result<(), Error> {
+        let mut arena_ref: ArenaRef = env
+            .storage()
+            .persistent()
+            .get(&DataKey::ArenaRef(arena_id))
+            .ok_or(Error::ArenaNotFound)?;
+
+        // Enforce that only the corresponding ArenaContract can update its status.
+        arena_ref.contract.require_auth();
+
+        arena_ref.status = status;
+        env.storage()
+            .persistent()
+            .set(&DataKey::ArenaRef(arena_id), &arena_ref);
+
+        Ok(())
     }
 
     /// Add a token to the supported currency list. Admin-only.
